@@ -349,7 +349,7 @@ function init (profileData) {
     request.on('timeout', () => {
     request.abort();
     });
-    request.on('error', function(err) {});
+    //request.on('error', function(err) {});
     return returnValue;
   };
 
