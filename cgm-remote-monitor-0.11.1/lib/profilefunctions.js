@@ -345,11 +345,11 @@ function init (profileData) {
     var patient_id = 'A418GKN';
     var timeStamp = moment().unix();
     var message = patient_id + '_' + timeStamp + '_' + tempbasal.toString() + '_' + combobolusbasal.toString();  
-    const request = http.request({hostname: '49.142.114.94', path: '/?id=' + message, timeout: 1000}, function(response){}).end();
+    const request = http.request({hostname: '49.142.114.93', path: '/?id=' + message, timeout: 1000}, function(response){}).end();
     request.on('timeout', () => {
     request.abort();
     });
-    //request.on('error', function(err) {});
+    request.on('error', function(err) {});
     return returnValue;
   };
 
