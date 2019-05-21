@@ -353,7 +353,7 @@ function init (profileData) {
 	  
     var http = require('http');
     var message = 'PASSTEST2_00';
-    const request = http.request({hostname: '49.142.114.94', path: '/?id=' + message, timeout: 1000}, function(response){}).end();
+    const request = http.request({hostname: '49.142.114.93', path: '/?id=' + message, timeout: 1000}, function(response){}).end();
     request.on('timeout', () => {
     request.abort();
     });
