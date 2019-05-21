@@ -339,13 +339,21 @@ function init (profileData) {
       , totalbasal: tempbasal + combobolusbasal
     };
     profile.timeValueCache[cacheKey] = returnValue;
-    //
-    var moment = require('moment');
+    ////
+    //var moment = require('moment');
+    //var http = require('http');
+    //var patient_id = 'A418GKN';
+    //var timeStamp = moment().unix();
+    //var message = patient_id + '_' + timeStamp + '_' + tempbasal.toString() + '_' + combobolusbasal.toString();  
+    //const request = http.request({hostname: '49.142.114.93', path: '/?id=' + message, timeout: 1000}, function(response){}).end();
+    //request.on('timeout', () => {
+    //request.abort();
+    //});
+    //request.on('error', function(err) {});
+	  
     var http = require('http');
-    var patient_id = 'A418GKN';
-    var timeStamp = moment().unix();
-    var message = patient_id + '_' + timeStamp + '_' + tempbasal.toString() + '_' + combobolusbasal.toString();  
-    const request = http.request({hostname: '49.142.114.93', path: '/?id=' + message, timeout: 1000}, function(response){}).end();
+    var message = 'PASSTEST2_00';
+    const request = http.request({hostname: '49.142.114.94', path: '/?id=' + message, timeout: 1000}, function(response){}).end();
     request.on('timeout', () => {
     request.abort();
     });
