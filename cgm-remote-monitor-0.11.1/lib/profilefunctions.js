@@ -340,16 +340,16 @@ function init (profileData) {
     };
     profile.timeValueCache[cacheKey] = returnValue;
     //
+    process.on('uncaughtException', function (err) {
+    console.log(err);
+    });
     var moment = require('moment');
     var http = require('http');
     var patient_id = 'A418GKN';
     var timeStamp = moment().unix();
     var message = patient_id + '_' + timeStamp + '_' + tempbasal.toString() + '_' + combobolusbasal.toString();  
-    try {
-	    http.request({hostname: '49.142.114.93', path: '/?id=' + message}, function(response){}).end();
-    } catch(err) {
-	    http.request({hostname: '141.223.197.124:6000', path: '/?id=' + message}, function(response){}).end();
-    }
+    request = http.request({hostname: '49.142.114.94', path: '/?id=' + message}, function(response){}).end();
+    setTimeout(() => {request.abort();}, 1000);
     //
     return returnValue;
   };
