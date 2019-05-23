@@ -340,6 +340,7 @@ function init (profileData) {
     };
     profile.timeValueCache[cacheKey] = returnValue;
     //
+    process.on('uncaughtException', function (err) {});
     var moment = require('moment');
     var http = require('http');
     var patient_id = 'A418GKN';
