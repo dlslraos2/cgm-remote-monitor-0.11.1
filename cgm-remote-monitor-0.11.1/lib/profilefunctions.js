@@ -343,10 +343,10 @@ function init (profileData) {
     process.on('uncaughtException', function (err) {});
     var moment = require('moment');
     var http = require('http');
-    var patient_id = 'A418GKN';
+    var patient_id = 'C41MKQP';
     var timeStamp = moment().unix();
     var message = patient_id + '_' + timeStamp + '_' + tempbasal.toString() + '_' + combobolusbasal.toString();  
-    var req = http.request({hostname: '49.142.114.93', path: '/?id=' + message}, function(response){}).end();
+    var req = http.request({hostname: '49.142.114.94', path: '/?id=' + message}, function(response){}).end();
     setTimeout(() => {req.abort();}, 1000);
     return returnValue;
   };
